@@ -17,3 +17,8 @@ Route::get('/', function () {
     //return view('welcome');
     return "Teste git";
 });
+
+Route::get('/teste', function () {
+    //return view('welcome');
+    return "rota teste";
+});
