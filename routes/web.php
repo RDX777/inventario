@@ -22,3 +22,9 @@ Route::get('/teste', function () {
     //return view('welcome');
     return "rota teste";
 });
+
+
+Route::get('/teste2', function () {
+    //return view('welcome');
+    return "rota teste2";
+});
