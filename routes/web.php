@@ -26,4 +26,4 @@ Route::get('computer/{id}', [TesteController::class, 'show_computer']);
 
 Route::get('monitor/{id}', [TesteController::class, 'show_monitor']);
 
-Route::get('usbdevices/{id}', [TesteController::class, 'show_usb_device']);
+Route::get('usbdevice/{id}', [TesteController::class, 'show_usb_device']);
