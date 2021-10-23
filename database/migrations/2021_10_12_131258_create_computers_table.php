@@ -3,7 +3,6 @@
 use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
-use Illuminate\Support\Str;
 
 class CreateComputersTable extends Migration
 {
@@ -15,7 +14,8 @@ class CreateComputersTable extends Migration
     public function up()
     {
         Schema::create('computers', function (Blueprint $table) {
-            $table->uuid('uuid')->primary();
+            $table->id();
+            $table->uuid('uuid')->unique();
             $table->string('processor', 255)->nullable();
             $table->integer('memory_size')->nullable();
             $table->string('video', 255)->nullable();
@@ -35,7 +35,8 @@ class CreateComputersTable extends Migration
         });
 
         DB::table('computers')->insert(array(
-            'uuid'=>Str::uuid(),
+            //'uuid'=>Str::uuid(),
+            'uuid'=>'76e7c739-a349-415b-b600-16ac7c5da777',
             'processor'=>'Intel(R) Core(TM) i7-2617M CPU @ 1.50GHz   1.50 GHz',
             'memory_size'=>12,
             'video'=>'NVIDIA GeForce GTX 1060 3GB',
@@ -45,7 +46,7 @@ class CreateComputersTable extends Migration
             'network_cable_mac'=>'00-00-00-00-00-00',
             'network_wireless_mac'=>null,
             'manufacturer_name'=>'DELL',
-            'so_id'=>null,
+            'so_id'=>'Ruindows 10',
             'is_notebook'=>false,
             'comments'=>'Micro de teste',
             'model'=>'modelo 1',
@@ -54,8 +55,9 @@ class CreateComputersTable extends Migration
         ));
 
         DB::table('computers')->insert(array(
-            'uuid'=>Str::uuid(),
-            'processor'=>'Intel(R) Core(TM) i3-2617M CPU @ 1.50GHz   1.50 GHz',
+            //'uuid'=>Str::uuid(),
+            'uuid'=>'d1a37e0c-1d5d-4386-b162-dafefa6e4bb9',
+            'processor'=>'AMD Ryzen 5 3600X, 3.8GHz',
             'memory_size'=>4,
             'video'=>null,
             'video_size'=>null,
@@ -64,7 +66,7 @@ class CreateComputersTable extends Migration
             'network_cable_mac'=>'00-00-00-00-00-00',
             'network_wireless_mac'=>null,
             'manufacturer_name'=>'HP',
-            'so_id'=>null,
+            'so_id'=>'Lixux',
             'is_notebook'=>false,
             'comments'=>'Micro de teste 2',
             'model'=>'modelo 1',
@@ -73,7 +75,8 @@ class CreateComputersTable extends Migration
         ));
 
         DB::table('computers')->insert(array(
-            'uuid'=>Str::uuid(),
+            //'uuid'=>Str::uuid(),
+            'uuid'=>'198199ae-ebe1-42c3-9be2-c7c4437457ee',
             'processor'=>'Intel(R) Core(TM) i5-2617M CPU @ 4.0GHz',
             'memory_size'=>8,
             'video'=>null,
@@ -83,7 +86,7 @@ class CreateComputersTable extends Migration
             'network_cable_mac'=>'00-00-00-00-00-00',
             'network_wireless_mac'=>null,
             'manufacturer_name'=>'HP',
-            'so_id'=>null,
+            'so_id'=>'Ruindows 11',
             'is_notebook'=>false,
             'comments'=>'Micro de teste 2',
             'model'=>'modelo 1',

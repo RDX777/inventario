@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 
+use App\Http\Controllers\Teste\TesteController;
+
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -18,13 +20,10 @@ Route::get('/', function () {
     return "Teste git";
 });
 
-Route::get('/teste', function () {
-    //return view('welcome');
-    return "rota teste";
-});
+Route::get('local/{id}', [TesteController::class, 'show_local']);
 
+Route::get('computer/{id}', [TesteController::class, 'show_computer']);
 
-Route::get('/teste2', function () {
-    //return view('welcome');
-    return "rota teste2";
-});
+Route::get('monitor/{id}', [TesteController::class, 'show_monitor']);
+
+Route::get('usbdevices/{id}', [TesteController::class, 'show_usb_device']);
