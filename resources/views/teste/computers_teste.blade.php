@@ -26,7 +26,7 @@
             <li><b>Codigo de barra:</b> 
                 @php
                     $barcode = vsprintf("%'.012d", $computer['id']);
-                    echo DNS1D::getBarcodeHTML($barcode, 'C39+', 3, 33,'black', true);
+                    echo DNS1D::getBarcodeHTML($barcode, 'C39', 2, 40,'black', true);
                 @endphp
             </li>
             <li><b>QR Code:</b> 
@@ -50,6 +50,14 @@
 
             </ul>
 
+        @endforeach
+
+        <h3>Imagens</h3>
+
+        @foreach ($computer->images as $image)
+            @php
+                echo '<img src="data:image/jpeg;base64,'.base64_encode( $image->data ).'"/>';
+            @endphp 
         @endforeach
 
 

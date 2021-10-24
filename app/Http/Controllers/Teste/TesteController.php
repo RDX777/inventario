@@ -29,9 +29,9 @@ class TesteController extends Controller
     {
 
 
-        $computer = Computer::with('local')->where('id', request('id'))->first();
+        $computer = Computer::with('local')->with('images')->where('id', request('id'))->first();
 
-        //dd($itens);
+        //dd($computer);
 
         return view("teste.computers_teste", compact('computer'));
 

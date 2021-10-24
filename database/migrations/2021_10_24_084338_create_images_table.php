@@ -17,8 +17,31 @@ class CreateImagesTable extends Migration
             $table->id();
             $table->string('file_name', 255);
             $table->string('file_extension');
-            $table->binary('data');
+            //$table->binary('data');
         });
+
+        DB::statement("ALTER TABLE images ADD data LONGBLOB");
+
+        DB::table('images')->insert(array(
+            'file_name' => 'micro1',
+            'file_extension' => 'jpg',
+            'data' => file_get_contents(public_path() . '\micro1.jpg')
+
+        ));
+
+        DB::table('images')->insert(array(
+            'file_name' => 'micro2',
+            'file_extension' => 'jpg',
+            'data' => file_get_contents(public_path() . '\micro2.jpg')
+
+        ));
+
+        DB::table('images')->insert(array(
+            'file_name' => 'micro3',
+            'file_extension' => 'jpg',
+            'data' => file_get_contents(public_path() . '\micro3.jpg')
+
+        ));
     }
 
     /**
