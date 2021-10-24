@@ -15,8 +15,18 @@ class CreateUsbDeviceLocalTable extends Migration
     {
         Schema::create('usb_device_local', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('usb_device_id');
-            $table->bigInteger('local_id');
+            $table->unsignedBigInteger('usb_device_id');
+            $table->foreign('usb_device_id')
+                ->references('id')
+                ->on('usb_devices')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('local_id');
+            $table->foreign('local_id')
+                ->references('id')
+                ->on('local')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
         });

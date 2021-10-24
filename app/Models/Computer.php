@@ -15,6 +15,6 @@ class computer extends Model
 
     public function local()
     {
-        return $this->belongsToMany(Local::class, 'computer_local')->withPivot(['start_date', 'end_date']);
+        return $this->belongsToMany(Local::class)->withPivot(['start_date', 'end_date']);
     }
 }

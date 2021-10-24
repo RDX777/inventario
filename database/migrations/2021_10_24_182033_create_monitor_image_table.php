@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateMonitorLocalTable extends Migration
+class CreateMonitorImageTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateMonitorLocalTable extends Migration
      */
     public function up()
     {
-        Schema::create('monitor_local', function (Blueprint $table) {
+        Schema::create('monitor_image', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('monitor_id');
             $table->foreign('monitor_id')
@@ -21,36 +21,15 @@ class CreateMonitorLocalTable extends Migration
                 ->on('monitors')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('local_id');
-            $table->foreign('local_id')
+            $table->unsignedBigInteger('image_id');
+            $table->foreign('image_id')
                 ->references('id')
-                ->on('local')
+                ->on('images')               
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
         });
-
-        DB::table('monitor_local')->insert(array(
-            'monitor_id' => 1,
-            'local_id' => 1,
-            'start_date' => '2021-10-12 19:48'
-
-        ));
-
-        DB::table('monitor_local')->insert(array(
-            'monitor_id' => 2,
-            'local_id' => 2,
-            'start_date' => '2021-10-12 19:48'
-
-        ));
-
-        DB::table('monitor_local')->insert(array(
-            'monitor_id' => 3,
-            'local_id' => 3,
-            'start_date' => '2021-10-12 19:48'
-
-        ));
     }
 
     /**
@@ -60,6 +39,6 @@ class CreateMonitorLocalTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('monitor_local');
+        Schema::dropIfExists('monitor_image');
     }
 }

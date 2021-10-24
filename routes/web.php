@@ -17,7 +17,20 @@ use App\Http\Controllers\Teste\TesteController;
 
 Route::get('/', function () {
     //return view('welcome');
-    return "Teste git";
+    return "Teste de sistema de inventario - versão demostração - Alpha not Omega
+        <br>
+        /computer/ + id
+        <br>
+        /local/ + id
+        <br>
+        /monitor/ + id
+        <br>
+        /usbdevice/ + id
+
+        <br>
+
+        Is not a API, only a html test.
+        ";
 });
 
 Route::get('local/{id}', [TesteController::class, 'show_local']);

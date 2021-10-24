@@ -15,8 +15,18 @@ class CreateComputerLocalTable extends Migration
     {
         Schema::create('computer_local', function (Blueprint $table) {
             $table->id();
-            $table->bigInteger('computer_id');
-            $table->bigInteger('local_id');
+            $table->unsignedBigInteger('computer_id');
+            $table->foreign('computer_id')
+                ->references('id')
+                ->on('computers')
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
+            $table->unsignedBigInteger('local_id');
+            $table->foreign('local_id')
+                ->references('id')
+                ->on('local')               
+                ->onUpdate('cascade')
+                ->onDelete('cascade');
             $table->dateTime('start_date')->nullable();
             $table->dateTime('end_date')->nullable();
         });
