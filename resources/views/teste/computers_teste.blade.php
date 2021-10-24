@@ -23,6 +23,19 @@
             <li><b>Tamanho HD:</b>  {{$computer['hard_disk_size']}}</li>
             <li><b>Sistema Operacional:</b>  {{$computer['so_id']}}</li>
             <li><b>Fabricante:</b>  {{$computer['manufacturer_name']}}</li>
+            <li><b>Codigo de barra:</b> 
+                @php
+                    $barcode = vsprintf("%'.012d", $computer['id']);
+                    echo DNS1D::getBarcodeHTML($barcode, 'C39+', 3, 33,'black', true);
+                @endphp
+            </li>
+            <li><b>QR Code:</b> 
+                @php
+                    $barcode = vsprintf("%'.012d", $computer['id']);
+                    echo DNS2D::getBarcodeHTML($barcode, 'QRCODE');
+                @endphp
+            </li>
+
         </ul>
 
         <h3>Local</h3>
