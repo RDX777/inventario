@@ -15,6 +15,11 @@ use App\Http\Controllers\Teste\TesteController;
 |
 */
 
+Route::get('bootstrap', function () {
+    return view('teste.bootstrap');
+})->name('teste.bootstrap');
+
+
 Route::get('/', function () {
     //return view('welcome');
     return "Teste de sistema de inventario - versão demostração - Alpha not Omega
