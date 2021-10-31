@@ -33,6 +33,9 @@ Route::get('/', function () {
         /usbdevice/ + id
 
         <br>
+        /bootstrap
+
+        <br>
 
         Is not a API, only a html test.
         ";

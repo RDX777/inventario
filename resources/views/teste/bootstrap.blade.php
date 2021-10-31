@@ -7,60 +7,126 @@
     <link rel="stylesheet" href="{{ url(mix('css/bootstrap/bootstrap.css')) }}">
     <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
    
-    <title>Document</title>
+    <title>Teste de Menu Bootstrap</title>
 
 </head>
 <body>
     
+    
     <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
 
         <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-            <i class="bi bi-menu-down"></i>
-            <span class="fs-5 fw-semibold">Menu</span>
+            <i class="bi bi-house-door">&nbsp</i>
+            <span class="fs-5 fw-semibold">&nbspInvent IO</span>
         </a>
 
         <ul class="list-unstyled ps-0">
 
         <li class="mb-1">
-            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
-                Home
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#ativos-collapse" aria-expanded="false">
+                Ativos
             </button>
 
-            <div class="collapse" id="home-collapse">
+            <div class="collapse" id="ativos-collapse">
                 <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-                    <li><a href="#" class="link-dark rounded">Overview</a></li>
-                    <li><a href="#" class="link-dark rounded">Updates</a></li>
-                    <li><a href="#" class="link-dark rounded">Reports</a></li>
+                    <li>
+
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#computadores-collapse" aria-expanded="false">
+                            Computadores
+                        </button>
+                        <div class="collapse" id="computadores-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">Cadastrar</a></li>
+                                <li><a href="#" class="link-dark rounded">Editar</a></li>
+                                <li><a href="#" class="link-dark rounded">Excluir</a></li>
+                                <li><a href="#" class="link-dark rounded">Procurar</a></li>
+                            </ul>
+                        </div>
+
+                    </li>  
+
+                    <li>
+
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dispositivos_usb-collapse" aria-expanded="false">
+                            Dispositivos USBs
+                        </button>
+                        <div class="collapse" id="dispositivos_usb-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">Cadastrar</a></li>
+                                <li><a href="#" class="link-dark rounded">Editar</a></li>
+                                <li><a href="#" class="link-dark rounded">Excluir</a></li>
+                                <li><a href="#" class="link-dark rounded">Procurar</a></li>
+                            </ul>
+                        </div>
+
+                    </li>   
+
+                    <li>
+
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#locais-collapse" aria-expanded="false">
+                            Locais
+                        </button>
+                        <div class="collapse" id="locais-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">Cadastrar</a></li>
+                                <li><a href="#" class="link-dark rounded">Editar</a></li>
+                                <li><a href="#" class="link-dark rounded">Excluir</a></li>
+                                <li><a href="#" class="link-dark rounded">Procurar</a></li>
+                            </ul>
+                        </div>
+
+                    </li>
+
+                    <li>
+
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#monitores-collapse" aria-expanded="false">
+                            Monitores
+                        </button>
+                        <div class="collapse" id="monitores-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">Cadastrar</a></li>
+                                <li><a href="#" class="link-dark rounded">Editar</a></li>
+                                <li><a href="#" class="link-dark rounded">Excluir</a></li>
+                                <li><a href="#" class="link-dark rounded">Procurar</a></li>
+                            </ul>
+                        </div>
+
+                    </li>
+                    
+                    <li>
+
+                        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#softwares-collapse" aria-expanded="false">
+                            Softwares
+                        </button>
+                        <div class="collapse" id="softwares-collapse">
+                            <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                                <li><a href="#" class="link-dark rounded">Cadastrar</a></li>
+                                <li><a href="#" class="link-dark rounded">Editar</a></li>
+                                <li><a href="#" class="link-dark rounded">Excluir</a></li>
+                                <li><a href="#" class="link-dark rounded">Procurar</a></li>
+                            </ul>
+                        </div>
+
+                    </li> 
+
                 </ul>
             </div>
         </li>
 
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
-          Dashboard
-        </button>
-        <div class="collapse" id="dashboard-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Weekly</a></li>
-            <li><a href="#" class="link-dark rounded">Monthly</a></li>
-            <li><a href="#" class="link-dark rounded">Annually</a></li>
-          </ul>
-        </div>
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
+                Ordem de serviço
+            </button>
+            <div class="collapse" id="orders-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-dark rounded">Novo</a></li>
+                    <li><a href="#" class="link-dark rounded">Processado</a></li>
+                    <li><a href="#" class="link-dark rounded">Enviado</a></li>
+                    <li><a href="#" class="link-dark rounded">Retornado</a></li>
+                </ul>
+            </div>
       </li>
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#orders-collapse" aria-expanded="false">
-          Orders
-        </button>
-        <div class="collapse" id="orders-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">New</a></li>
-            <li><a href="#" class="link-dark rounded">Processed</a></li>
-            <li><a href="#" class="link-dark rounded">Shipped</a></li>
-            <li><a href="#" class="link-dark rounded">Returned</a></li>
-          </ul>
-        </div>
-      </li>
+
       <li class="border-top my-3"></li>
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#account-collapse" aria-expanded="false">

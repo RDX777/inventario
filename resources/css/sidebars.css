@@ -73,6 +73,14 @@ body {
     display: inline-flex;
     padding: .1875rem .5rem;
     margin-top: .125rem;
+    margin-left: 1.80rem;
+    text-decoration: none;
+  }
+
+  .btn-toggle-nav button {
+    display: inline-flex;
+    padding: .1875rem .5rem;
+    margin-top: .125rem;
     margin-left: 1.25rem;
     text-decoration: none;
   }
