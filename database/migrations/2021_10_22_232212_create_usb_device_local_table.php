@@ -24,7 +24,7 @@ class CreateUsbDeviceLocalTable extends Migration
             $table->unsignedBigInteger('local_id');
             $table->foreign('local_id')
                 ->references('id')
-                ->on('local')
+                ->on('locals')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->dateTime('start_date')->nullable();

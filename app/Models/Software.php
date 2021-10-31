@@ -5,9 +5,9 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-class Image extends Model
+class Software extends Model
 {
     use HasFactory;
 
-    protected $table = 'images';
+    protected $table = 'softwares';
 }

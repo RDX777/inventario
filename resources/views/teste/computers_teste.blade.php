@@ -15,13 +15,11 @@
     @isset($computer)
 
         <ul>
-            <li><b>Chave unica (qrcode): </b> {{$computer['uuid']}}</li>
             <li><b>Processador:</b> {{$computer['processor']}}</li>
             <li><b>Quantidade memoria:</b>  {{$computer['memory_size']}}</li>
             <li><b>Placa de Video:</b>  {{$computer['video']}}</li>
             <li><b>Quantidade memoria de video:</b>  {{$computer['video_size']}}</li>
             <li><b>Tamanho HD:</b>  {{$computer['hard_disk_size']}}</li>
-            <li><b>Sistema Operacional:</b>  {{$computer['so_id']}}</li>
             <li><b>Fabricante:</b>  {{$computer['manufacturer_name']}}</li>
             <li><b>Codigo de barra:</b> 
                 @php
@@ -37,10 +35,23 @@
             </li>
 
         </ul>
+        <h3>Softwares</h3>
+
+        @foreach ($computer->softwares as $software)
+
+            <ul>
+                <li><b>Fabricante:</b> {{$software->manufacturer_name}}</li>
+                <li><b>Nome:</b> {{$software->name}}</li>
+                <li><b>Descrição:</b> {{$software->description}}</li>
+                <li><b>Tipo:</b> {{$software->type}}</li>
+            </ul>
+
+        @endforeach
+
 
         <h3>Local</h3>
 
-        @foreach ($computer->local as $local)
+        @foreach ($computer->locals as $local)
 
             <ul>
                 <li><b>Local:</b> {{$local->location_name}}</li>

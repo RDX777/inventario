@@ -5,16 +5,12 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Computer;
-use App\Models\Monitor;
-use App\Models\Usb_Device;
-
-
-class local extends Model
+class Local extends Model
 {
+
     use HasFactory;
 
-    //protected $table = 'locals';
+    protected $table = 'locals';
 
     public function computers()
     {
@@ -30,5 +26,4 @@ class local extends Model
     {
         return $this->belongsToMany(Usb_Device::class, 'usb_device_local')->withPivot(['start_date', 'end_date']);
     }
-
 }

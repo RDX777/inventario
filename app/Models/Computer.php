@@ -5,16 +5,13 @@ namespace App\Models;
 use Illuminate\Database\Eloquent\Factories\HasFactory;
 use Illuminate\Database\Eloquent\Model;
 
-use App\Models\Local;
-use App\Models\Image;
-
-class computer extends Model
+class Computer extends Model
 {
     use HasFactory;
 
     protected $table = 'computers';
 
-    public function local()
+    public function locals()
     {
         return $this->belongsToMany(Local::class)->withPivot(['start_date', 'end_date']);
     }
@@ -22,5 +19,10 @@ class computer extends Model
     public function images()
     {
         return $this->belongsToMany(Image::class)->withPivot(['start_date', 'end_date']);
+    }
+
+    public function softwares()
+    {
+        return $this->belongsToMany(Software::class)->withPivot(['start_date', 'end_date']);
     }
 }

@@ -4,7 +4,7 @@ use Illuminate\Database\Migrations\Migration;
 use Illuminate\Database\Schema\Blueprint;
 use Illuminate\Support\Facades\Schema;
 
-class CreateComputerImageTable extends Migration
+class CreateComputerSoftwareTable extends Migration
 {
     /**
      * Run the migrations.
@@ -13,7 +13,7 @@ class CreateComputerImageTable extends Migration
      */
     public function up()
     {
-        Schema::create('computer_image', function (Blueprint $table) {
+        Schema::create('computer_software', function (Blueprint $table) {
             $table->id();
             $table->unsignedBigInteger('computer_id');
             $table->foreign('computer_id')
@@ -21,10 +21,10 @@ class CreateComputerImageTable extends Migration
                 ->on('computers')
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
-            $table->unsignedBigInteger('image_id');
-            $table->foreign('image_id')
+            $table->unsignedBigInteger('software_id');
+            $table->foreign('software_id')
                 ->references('id')
-                ->on('images')               
+                ->on('softwares')               
                 ->onUpdate('cascade')
                 ->onDelete('cascade');
             $table->dateTime('start_date')->nullable();
@@ -32,31 +32,24 @@ class CreateComputerImageTable extends Migration
             
         });
 
-        DB::table('computer_image')->insert(array(
+        DB::table('computer_software')->insert(array(
             'computer_id' => 1,
-            'image_id' => 1,
+            'software_id' => 1,
             'start_date' => '2021-10-12 19:48'
 
         ));
 
-        DB::table('computer_image')->insert(array(
-            'computer_id' => 1,
-            'image_id' => 2,
-            'start_date' => '2021-10-12 19:48'
-
-        ));
-
-        DB::table('computer_image')->insert(array(
+        DB::table('computer_software')->insert(array(
             'computer_id' => 2,
-            'image_id' => 2,
-            'start_date' => '2021-10-12 19:48'
+            'software_id' => 4,
+            'start_date' => '2021-09-12 19:48'
 
         ));
 
-        DB::table('computer_image')->insert(array(
+        DB::table('computer_software')->insert(array(
             'computer_id' => 3,
-            'image_id' => 3,
-            'start_date' => '2021-10-12 19:48'
+            'software_id' => 5,
+            'start_date' => '2021-09-11 19:48'
 
         ));
     }
@@ -68,6 +61,6 @@ class CreateComputerImageTable extends Migration
      */
     public function down()
     {
-        Schema::dropIfExists('computer_image');
+        Schema::dropIfExists('computer_software');
     }
 }
