@@ -32,11 +32,7 @@ class TesteController extends Controller
 
 
         $computer = Computer::with('locals')
-            ->with(['images' => function ($query){
-                $query->select(['file_name',
-                    'file_extension'
-                ]);
-            }])
+            ->with('images')
             ->with('softwares')
             ->where('id', request('id'))
             ->first();
@@ -141,7 +137,7 @@ class TesteController extends Controller
         }
         catch(ModelNotFoundException $e)
         {
-            $image = Image::where('id', 0)->first();
+            $image = Image::where('id', 1)->first();
         }
 
         return response($image->data, 200)->header('Content-Type', 'image/jpeg');

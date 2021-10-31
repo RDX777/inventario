@@ -28,11 +28,6 @@ class CreateImagesTable extends Migration
 
         ));
 
-        //DB::statement("UPDATE images SET id = 0 WHERE id = 1");
-        //DB::statement("ALTER TABLE images AUTO_INCREMENT = 0");
-        //DB::statement("ALTER TABLE images MODIFY id BIGINT(20)");
-
-
         DB::table('images')->insert(array(
             'file_name' => 'micro1',
             'file_extension' => 'jpg',

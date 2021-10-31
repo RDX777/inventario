@@ -34,28 +34,28 @@ class CreateComputerImageTable extends Migration
 
         DB::table('computer_image')->insert(array(
             'computer_id' => 1,
-            'image_id' => 1,
+            'image_id' => 2,
             'start_date' => '2021-10-12 19:48'
 
         ));
 
         DB::table('computer_image')->insert(array(
             'computer_id' => 1,
-            'image_id' => 2,
+            'image_id' => 3,
             'start_date' => '2021-10-12 19:48'
 
         ));
 
         DB::table('computer_image')->insert(array(
             'computer_id' => 2,
-            'image_id' => 2,
+            'image_id' => 3,
             'start_date' => '2021-10-12 19:48'
 
         ));
 
         DB::table('computer_image')->insert(array(
             'computer_id' => 3,
-            'image_id' => 3,
+            'image_id' => 4,
             'start_date' => '2021-10-12 19:48'
 
         ));
