@@ -6,29 +6,35 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <link rel="stylesheet" href="{{ url(mix('css/bootstrap/bootstrap.css')) }}">
     <link rel="stylesheet" href="{{ url(mix('css/app.css')) }}">
+   
     <title>Document</title>
+
 </head>
 <body>
+    
+    <div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
 
+        <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
+            <i class="bi bi-menu-down"></i>
+            <span class="fs-5 fw-semibold">Menu</span>
+        </a>
 
-<div class="flex-shrink-0 p-3 bg-white" style="width: 280px;">
-    <a href="/" class="d-flex align-items-center pb-3 mb-3 link-dark text-decoration-none border-bottom">
-      <svg class="bi me-2" width="30" height="24"><use xlink:href="#bootstrap"/></svg>
-      <span class="fs-5 fw-semibold">Collapsible</span>
-    </a>
-    <ul class="list-unstyled ps-0">
-      <li class="mb-1">
-        <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="true">
-          Home
-        </button>
-        <div class="collapse show" id="home-collapse">
-          <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
-            <li><a href="#" class="link-dark rounded">Overview</a></li>
-            <li><a href="#" class="link-dark rounded">Updates</a></li>
-            <li><a href="#" class="link-dark rounded">Reports</a></li>
-          </ul>
-        </div>
-      </li>
+        <ul class="list-unstyled ps-0">
+
+        <li class="mb-1">
+            <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#home-collapse" aria-expanded="false">
+                Home
+            </button>
+
+            <div class="collapse" id="home-collapse">
+                <ul class="btn-toggle-nav list-unstyled fw-normal pb-1 small">
+                    <li><a href="#" class="link-dark rounded">Overview</a></li>
+                    <li><a href="#" class="link-dark rounded">Updates</a></li>
+                    <li><a href="#" class="link-dark rounded">Reports</a></li>
+                </ul>
+            </div>
+        </li>
+
       <li class="mb-1">
         <button class="btn btn-toggle align-items-center rounded collapsed" data-bs-toggle="collapse" data-bs-target="#dashboard-collapse" aria-expanded="false">
           Dashboard
