@@ -14,4 +14,4 @@ jobs:
         server: ${{ secrets.HOSTGATOR_SERVER }}
         username: ${{ secrets.HOSTGATOR_USER }}
         password: ${{ secrets.HOSTGATOR_PASSWORD }}
-        server_dir: teste/
+        server_dir: /

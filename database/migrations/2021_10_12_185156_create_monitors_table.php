@@ -14,6 +14,7 @@ class CreateMonitorsTable extends Migration
     public function up()
     {
         Schema::create('monitors', function (Blueprint $table) {
+            $table->id();
             $table->string('manufacturer_name', 255)->nullable();
             $table->float('iches')->nullable();
             $table->string('model', 255)->nullable();
