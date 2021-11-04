@@ -63,7 +63,7 @@ class TesteController extends Controller
 
     public function show()
     {
-        $response = Http::get('http://localhost/api/computers/show')->json();
+        $response = Http::get(url('/api/computers/show'))->json();
 
         //dd($response);
         return view("teste.bootstrap", compact('response'));
