@@ -160,43 +160,46 @@
                         <div class="collapse navbar-collapse" id="navbarSupportedContent">
                             <ul class="navbar-nav me-auto mb-2 mb-lg-0">
                                 <li class="nav-item">
-                                    <a class="nav-link active" aria-current="page" href="#">Novo</a>
+                                    <a class="btn btn-outline-primary" aria-current="page" href="#">Novo</a>
                                 </li>
                             </ul>
                             <form class="d-flex">
                                 <input class="form-control me-2" type="search" placeholder="Busque..." aria-label="Search">
-                                <button class="btn btn-outline-success" type="submit">Procurar</button>
+                                <button class="btn btn-outline-primary" type="submit">Procurar</button>
                             </form>
                         </div>
                     </div>
                 </nav>
 
-                <div class="card mt-2">
-                    <h5 class="card-header">Destaque</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Título especial</h5>
-                        <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-                        <a href="#" class="btn btn-primary">Visitar</a>
-                    </div>
-                </div>
 
-                <div class="card mt-2">
-                    <h5 class="card-header">Destaque</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Título especial</h5>
-                        <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-                        <a href="#" class="btn btn-primary">Visitar</a>
-                    </div>
-                </div>
+                @foreach ($response['data'] as $pc)
 
-                <div class="card mt-2">
-                    <h5 class="card-header">Destaque</h5>
-                    <div class="card-body">
-                        <h5 class="card-title">Título especial</h5>
-                        <p class="card-text">Com suporte a texto embaixo, que funciona como uma introdução a um conteúdo adicional.</p>
-                        <a href="#" class="btn btn-primary">Visitar</a>
+                    <div class="card mt-2">
+                        <h5 class="card-header"><i class="bi bi-pc-display">&nbsp</i> {{ strtoupper($pc['hostname']) }}</h5>
+                        <div class="card-body">
+                            <h5 class="card-title">{{ strtoupper($pc['serial_number']) }}</h5>
+                            <p class="card-text">{{ $pc['comments'] }}</p>
+                            <a href="#" class="btn btn-primary">Visitar</a>
+                        </div>
                     </div>
-                </div>
+                    
+                @endforeach
+
+
+
+<ul class="pagination justify-content-end mt-3">
+<li class="page-item disabled">
+<a class="page-link" href="#" tabindex="-1">Previous</a>
+</li>
+<li class="page-item"><a class="page-link" href="#">1</a></li>
+<li class="page-item"><a class="page-link" href="#">2</a></li>
+<li class="page-item"><a class="page-link" href="#">3</a></li>
+<li class="page-item"><a class="page-link" href="#">4</a></li>
+<li class="page-item">
+<a class="page-link" href="#">Next</a>
+</li>
+</ul>
+
 
             </div>
 

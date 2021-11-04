@@ -15,9 +15,7 @@ use App\Http\Controllers\Teste\TesteController;
 |
 */
 
-Route::get('bootstrap', function () {
-    return view('teste.bootstrap');
-})->name('teste.bootstrap');
+Route::get('bootstrap', [TesteController::class, 'show'])->name('teste.bootstrap');
 
 
 Route::get('/', function () {

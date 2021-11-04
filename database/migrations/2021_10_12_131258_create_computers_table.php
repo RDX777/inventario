@@ -28,6 +28,7 @@ class CreateComputersTable extends Migration
             $table->string('comments', 255)->nullable();
             $table->string('model', 255)->nullable();
             $table->string('serial_number', 255)->unique();
+            $table->string('hostname', 255)->unique();
 
         });
 
@@ -44,7 +45,8 @@ class CreateComputersTable extends Migration
             'is_notebook'=>false,
             'comments'=>'Micro de teste',
             'model'=>'modelo 1',
-            'serial_number'=>'a1'
+            'serial_number'=>'a1',
+            'hostname' => 'hostname01'
         ));
 
         DB::table('computers')->insert(array(
@@ -60,7 +62,8 @@ class CreateComputersTable extends Migration
             'is_notebook'=>false,
             'comments'=>'Micro de teste 2',
             'model'=>'modelo 1',
-            'serial_number'=>'a2'
+            'serial_number'=>'a2',
+            'hostname' => 'hostname02'
         ));
 
         DB::table('computers')->insert(array(
@@ -76,7 +79,8 @@ class CreateComputersTable extends Migration
             'is_notebook'=>false,
             'comments'=>'Micro de teste 2',
             'model'=>'modelo 1',
-            'serial_number'=>'a3'
+            'serial_number'=>'a3',
+            'hostname' => 'hostname03'
         ));
 
         DB::table('computers')->insert(array(
@@ -92,7 +96,8 @@ class CreateComputersTable extends Migration
             'is_notebook'=>false,
             'comments'=>'Micro de teste 2',
             'model'=>'modelo 1',
-            'serial_number'=>'a115s74d5'
+            'serial_number'=>'a115s74d5',
+            'hostname' => 'hostname04'
         ));
 
         DB::table('computers')->insert(array(
@@ -108,7 +113,8 @@ class CreateComputersTable extends Migration
             'is_notebook'=>true,
             'comments'=>'Notebook de teste 2',
             'model' => 'AAA1.B222',
-            'serial_number'=>'4710886096887'
+            'serial_number'=>'4710886096887',
+            'hostname' => 'hostname05'
         ));
 
     }

@@ -24,6 +24,9 @@ Route::prefix('computers')->group(function () {
     
     Route::get('/find/{id}', [TesteController::class, 'find_computer_api']
     );
+
+    Route::get('/show', [TesteController::class, 'show_api']
+    );
        
 });
 

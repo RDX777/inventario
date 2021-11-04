@@ -5,6 +5,8 @@ namespace App\Http\Controllers\Teste;
 use App\Http\Controllers\Controller;
 use Illuminate\Http\Request;
 
+use Illuminate\Support\Facades\Http;
+
 use App\Models\Local;
 use App\Models\Computer;
 use App\Models\Monitor;
@@ -40,6 +42,31 @@ class TesteController extends Controller
         //dd($computer);
 
         return view("teste.computers_teste", compact('computer'));
+
+    }
+
+    public function show_api()
+    {
+
+        //busca pelo computador
+        $computer = Computer::orderByDesc('id')
+            ->simplePaginate(3);
+
+        //dd($computer);
+
+        return response()
+        ->json($computer, 200)
+        ->setEncodingOptions(JSON_UNESCAPED_SLASHES)
+        ->header('Content-Type', 'application/json');
+
+    }
+
+    public function show()
+    {
+        $response = Http::get('http://localhost/api/computers/show')->json();
+
+        //dd($response);
+        return view("teste.bootstrap", compact('response'));
 
     }
 
